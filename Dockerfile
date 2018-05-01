@@ -3,11 +3,12 @@ FROM ubuntu:xenial
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update \
-    && apt-get install -y software-properties-common python-software-properties
+    && apt-get --no-install-recommends install -y software-properties-common python-software-properties
 
 RUN LC_ALL=C.UTF-8 add-apt-repository -y ppa:ondrej/php \
     && apt-get update \
     && apt-get install -y \
+        apt-utils \
         git \
         unzip \
         curl \
