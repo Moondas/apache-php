@@ -51,6 +51,8 @@ RUN a2enmod rewrite && \
     && php composer-setup.php --install-dir=/usr/local/bin --filename=composer \
     && rm composer-setup.php;
 
+RUN composer global require hirak/prestissimo
+
 EXPOSE 80
 
 WORKDIR /var/www/html
